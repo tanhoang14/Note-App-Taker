@@ -17,7 +17,7 @@ export default function Home() {
           <Grid item xs={3} sx={{height:'100%'}}>
             <FolderList 
               folders={[
-                { id:"1", name:"Plan for holidays"}, 
+                {id:"1", name:"Plan for holidays"}, 
                 {id:'2',name:"Going out with friends"}
                 
               ]}

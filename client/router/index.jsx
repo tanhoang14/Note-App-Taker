@@ -1,4 +1,5 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
+import Note from "../components/Note";
 import NoteList from "../components/NoteList";
 import AuthProvider from "../context/AuthProvider";
 import ErrorPage from "../pages/ErrorPage";
@@ -30,7 +31,11 @@ export default createBrowserRouter([
                 path:'/',
                 children:[{
                   element: <NoteList/>,
-                  path: `folders/:folderId`
+                  path: `folders/:folderId`,
+                  children:[{
+                    element:<Note/>,
+                    path:note/noteId,
+                  }]
                 }]
               },
             ]
