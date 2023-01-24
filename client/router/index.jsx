@@ -1,5 +1,7 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
+import NoteList from "../components/NoteList";
 import AuthProvider from "../context/AuthProvider";
+import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import ProtectedRoute from "./ProtectedRoute";
@@ -14,6 +16,7 @@ const AuthLayout =() =>{
 export default createBrowserRouter([
     {
         element:<AuthLayout/>,
+        errorElement: <ErrorPage/>,
         children:[
           {
             element: <Login/>,
@@ -24,7 +27,11 @@ export default createBrowserRouter([
             children:[
               {
                 element: <Home/>,
-                path:'/'
+                path:'/',
+                children:[{
+                  element: <NoteList/>,
+                  path: `folders/:folderId`
+                }]
               },
             ]
           }

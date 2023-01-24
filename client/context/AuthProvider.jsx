@@ -10,7 +10,7 @@ export default function AuthProvider({children}) {
     const auth = getAuth();
     
     useEffect(()=>{
-        const unsubsribed = auth.onIdTokenChanged(()=>{
+        const unsubsribed = auth.onIdTokenChanged((user)=>{
             console.log('>>>>>>>>>>>>>>>>',{user})
             if(user?.uid){
                 setUser(user);
