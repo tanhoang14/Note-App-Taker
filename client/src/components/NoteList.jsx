@@ -1,6 +1,7 @@
 import { NoteAddOutlined } from '@mui/icons-material';
 import { Card, CardContent, Grid, IconButton, List, Tooltip, Typography } from '@mui/material'
 import { Box } from '@mui/system';
+import moment from 'moment';
 import React, { useState, useEffect } from 'react'
 import { Link, Outlet, useLoaderData, useNavigate, useParams, useSubmit } from 'react-router-dom';
 
@@ -54,7 +55,7 @@ export default function NoteList() {
                 }
             >
                 {
-                    folder.notes.map(({id,content})=>{
+                    folder.notes.map(({id,content, updatedAt})=>{
                         return (
                         <Link
                         key={id}
@@ -74,6 +75,7 @@ export default function NoteList() {
                                     <div style={{fontSize:14, fontWeight:'bold'}}
                                         dangerouslySetInnerHTML={{__html:`${content.substring(0,30)|| `Empty`}`}}
                                     />
+                                    <Typography sx={{fontSize:'10px'}}>{moment(updatedAt).format('MMMM Do YYYY, h:mm:ss a')}</Typography>
                                 </CardContent>
                             </Card>
 

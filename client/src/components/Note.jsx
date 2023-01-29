@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import {ContentState, convertFromHTML, convertToRaw, EditorState} from 'draft-js'
 import {Editor} from 'react-draft-wysiwyg'
-import {draftToHtml} from 'draftjs-to-html'
+import draftToHtml from 'draftjs-to-html';
 import { useLoaderData, useSubmit, useLocation} from 'react-router-dom'
 import { debounce } from '@mui/material'
 
@@ -22,6 +22,7 @@ export default function Note() {
         );
         setEditorState(EditorState.createWithContent(state));
       }, [note.id]);
+      
     useEffect(() => {
         debouncedMemorized(rawHTML,note,location.pathname)
     }, [rawHTML,location.pathname])
@@ -36,7 +37,7 @@ export default function Note() {
           aciton: pathname
         })
       },1000)
-    })
+    },[])
 
     useEffect(()=>{
         setRawHTML(note.content);
