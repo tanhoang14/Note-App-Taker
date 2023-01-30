@@ -29,5 +29,13 @@ type Mutation{
     addNote(content:String!, folderId: ID!): Note,
     updateNote(id:String!,content: String!) : Note,
     register(uid: String!, name: String!) : Author,
+    pushNotification(content: String) : Message
+}
+type Message{
+    message: String,
+}
+type Subscription{
+    folderCreated: Message
+    notification: Message
 }
 `;
