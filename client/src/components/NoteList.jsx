@@ -35,7 +35,7 @@ export default function NoteList() {
         sx={{
             width:'100%', 
             maxWidth:360, 
-            bgcolor:'#F0EBE3',
+            bgcolor:'#6db1db',
             height:'100%', 
             overflowY:'auto', 
             padding:'10px', 
