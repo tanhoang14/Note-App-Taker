@@ -67,7 +67,7 @@ export default function PushNotification() {
         overlap='circular'
         sx={{ '&:hover': { cursor: 'pointer' }, ml: '5px' }}
       >
-        <NotificationsIcon onClick={handleClick} sx={{ color: '#7D9D9C' }} />
+        <NotificationsIcon onClick={handleClick} sx={{ color: 'black' }} />
       </Badge>
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <MenuItem onClick={handleClose}>{notification}</MenuItem>

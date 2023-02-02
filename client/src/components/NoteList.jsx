@@ -35,7 +35,7 @@ export default function NoteList() {
         sx={{
             width:'100%', 
             maxWidth:360, 
-            bgcolor:'#6db1db',
+            background: 'radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,1) 90.1% )',
             height:'100%', 
             overflowY:'auto', 
             padding:'10px', 
